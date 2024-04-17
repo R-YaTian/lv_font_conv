@@ -83,6 +83,9 @@ function generate_opts_string(args) {
   if (args.use_color_info) {
     opts.push('--use-color-info');
   }
+  if (args.auto_shrink) {
+    opts.push('--auto-shrink');
+  }
 
   for (var i = 0; i < args.font.length; i++) {
     opts.push('--font', args.font[i].source_path);
@@ -166,6 +169,7 @@ document.querySelector('#converterForm').addEventListener('submit', function han
     lcd: document.getElementById('subpixel2').checked,
     lcd_v: document.getElementById('subpixel3').checked,
     use_color_info: document.getElementById('use_color_info').checked,
+    auto_shrink: document.getElementById('auto_shrink').checked,
     format: 'lvgl',
     output: _name,
     lv_fallback: _fallback
